@@ -43,6 +43,7 @@ export default ({ mode }: UserConfig) => {
       react(),
       tailwindcss(),
     ],
+    base: '/tanstack-todo-sample/',
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'),
