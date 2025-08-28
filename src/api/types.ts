@@ -1,14 +1,3 @@
-import type { AxiosError } from 'axios';
-
-export interface ApiError {
-  message?: string;
-  error?: string;
-  errorParameters?: Record<string, string>;
-  timestamp: string;
-}
-
-export type ResponseError = AxiosError<ApiError>;
-
 export enum StatusEnum {
   TO_DO = 'TO_DO',
   IN_PROGRESS = 'IN_PROGRESS',
