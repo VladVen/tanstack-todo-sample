@@ -1,0 +1,44 @@
+{
+  "title": "Список завдань",
+  "addTodo": "Додати завдання",
+  "editTodo": "Редагувати завдання",
+  "addExecutor": "Додати виконавця",
+  "status": {
+    "to_do": "Зробити",
+    "in_progress": "В процесі",
+    "done": "Виконано"
+  },
+  "priority": {
+    "low": "Низький",
+    "medium": "Середній",
+    "high": "Високий"
+  },
+  "form": {
+    "title": {
+      "label": "Назва",
+      "placeholder": "Введіть назву"
+    },
+    "description": {
+      "label": "Опис",
+      "placeholder": "Введіть опис"
+    },
+    "status": {
+      "label": "Статус",
+      "placeholder": "Виберіть статус"
+    },
+    "priority": {
+      "label": "Пріоритет",
+      "placeholder": "Виберіть пріоритет"
+    },
+    "deadline": {
+      "label": "Термін виконання",
+      "placeholder": "Введіть термін виконання"
+    },
+    "executor": {
+      "label": "Виконавець",
+      "placeholder": "Виберіть виконавця"
+    },
+    "file": "Зображення",
+    "preview": "Перегляд зображення"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "title": "Todo List",
+  "addTodo": "Add Todo",
+  "editTodo": "Edit Todo",
+  "addExecutor": "Add Executor",
+  "status": {
+    "to_do": "To Do",
+    "in_progress": "In Progress",
+    "done": "Done"
+  },
+  "priority": {
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High"
+  },
+  "form": {
+    "title": {
+      "label": "Title",
+      "placeholder": "Enter Title"
+    },
+    "description": {
+      "label": "Description",
+      "placeholder": "Enter Description"
+    },
+    "status": {
+      "label": "Status",
+      "placeholder": "Select Status"
+    },
+    "priority": {
+      "label": "Priority",
+      "placeholder": "Select Priority"
+    },
+    "deadline": {
+      "label": "Deadline",
+      "placeholder": "Enter Deadline"
+    },
+    "executor": {
+      "label": "Executor",
+      "placeholder": "Choose Executor"
+    },
+    "file": "Image",
+    "preview": "Image Preview"
+  }
+}
