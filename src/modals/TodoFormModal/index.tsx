@@ -11,7 +11,11 @@ import { Input } from '@/components/ui/input.tsx';
 import { Button } from '@/components/ui/button';
 import { uploadFile } from '@/api/storage.ts';
 import { PriorityEnum, StatusEnum, type TodoItemType } from '@/api/types.ts';
-import { useCreateTodo, useUpdateTodo } from '@/queries/todoQueries.ts';
+import {
+  useCreateTodo,
+  useUpdateTodo,
+  useDeleteTodo,
+} from '@/queries/todoQueries.ts';
 import {
   type FormValues,
   validationSchema,
@@ -37,6 +41,7 @@ const TodoFormModal = (props: TodoFormProps) => {
   const { t } = useTranslation();
   const { mutate: createTodoMutate } = useCreateTodo();
   const { mutate: updateTodoMutate } = useUpdateTodo();
+  const { mutate: deleteTodoMutate } = useDeleteTodo();
 
   const [executorLabel, setExecutorLabel] = useState<string>(
     initialData?.user?.name || '',
@@ -53,6 +58,16 @@ const TodoFormModal = (props: TodoFormProps) => {
       onCloseModal();
     }
   }, [executorModal.isOpen, onCloseModal]);
+
+  const handleDeleteTodo = useCallback(() => {
+    if (initialData) {
+      deleteTodoMutate({
+        todoId: initialData.id,
+        status: initialData.status,
+      });
+      handleModalClose();
+    }
+  }, [initialData, deleteTodoMutate, handleModalClose]);
 
   // Ensure file preview is updated when initialData changes
   useEffect(() => {
@@ -171,8 +186,26 @@ const TodoFormModal = (props: TodoFormProps) => {
 
   const isSubmitDisabled = useMemo(
     () => isSubmitting || !isValid || !dirty,
+
     [isSubmitting, isValid, dirty],
   );
+
+  const headerRemoveButton = useMemo(() => {
+    if (!initialData) {
+      return null;
+    }
+
+    return (
+      <Button
+        variant="destructive"
+        size="sm"
+        onClick={handleDeleteTodo}
+        className="ml-2"
+      >
+        {t('delete')}
+      </Button>
+    );
+  }, [initialData, handleDeleteTodo, t]);
 
   const statusOptions = useMemo(
     () =>
@@ -198,6 +231,7 @@ const TodoFormModal = (props: TodoFormProps) => {
       clickSubmit={handleSubmit}
       onCloseModal={handleModalClose}
       disabled={isSubmitDisabled}
+      headerAction={headerRemoveButton}
     >
       <FormikProvider value={form}>
         <form className="space-y-4" onSubmit={handleSubmit}>

@@ -57,7 +57,7 @@ const Modal = (props: Props) => {
     >
       <div className="border border-solid border-divider rounded-xl bg-card">
         <div className="relative flex justify-center p-[22px] rounded-t-xl border-b-border border-b-1">
-          <div className="flex items-center justify-between gap-3 text-xl">
+          <div className="flex items-center justify-between gap-3 text-xl w-full">
             {title} {headerAction}
           </div>
 
