@@ -22,6 +22,7 @@ export const router = createRouter({
   defaultPreload: 'intent',
   defaultPreloadStaleTime: 0,
   scrollRestoration: true,
+  basepath: '/tanstack-todo-sample/',
   defaultNotFoundComponent: () => {
     return <NotFoundComponent />;
   },
