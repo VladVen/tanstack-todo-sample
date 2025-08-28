@@ -56,7 +56,7 @@ function TodoColumns({ todos }: { todos: TodoListType }) {
   const { activeId, activeStatus, overStatus, getActiveTodo } = useDnd();
 
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 sm:flex-row flex-col">
       {Object.values(StatusEnum).map(status => {
         // Get the items for this column
         let columnItems = [...todos[status]];

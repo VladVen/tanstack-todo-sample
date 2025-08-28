@@ -1,4 +1,5 @@
 import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import {
@@ -20,6 +21,7 @@ const priorityOptions = {
 
 const TodoItem = (props: TodoItemType) => {
   const { title, id, priority, deadline, file } = props;
+  const { t } = useTranslation();
 
   // Set up sortable functionality
   const {
@@ -56,11 +58,16 @@ const TodoItem = (props: TodoItemType) => {
       <div className="font-medium">{title}</div>
 
       <div className="flex justify-between mt-2 text-sm text-muted-foreground">
-        <div>Priority: {priorityOptions[priority]}</div>
+        <div>
+          {t('todo:todoItem.priority')}: {priorityOptions[priority]}
+        </div>
         <div className="flex items-center gap-2">
           {file && <ImageIcon size={16} className="text-blue-500" />}
           {deadline && (
-            <div>Due: {new Date(deadline).toLocaleDateString()}</div>
+            <div>
+              {t('todo:todoItem.due')}:{' '}
+              {new Date(deadline).toLocaleDateString()}
+            </div>
           )}
         </div>
       </div>

@@ -3,6 +3,10 @@
   "addTodo": "Додати завдання",
   "editTodo": "Редагувати завдання",
   "addExecutor": "Додати виконавця",
+  "todoItem": {
+    "priority": "Пріоритет",
+    "due": "Термін"
+  },
   "status": {
     "to_do": "Зробити",
     "in_progress": "В процесі",

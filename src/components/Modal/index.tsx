@@ -50,7 +50,7 @@ const Modal = (props: Props) => {
       onRequestClose={onCloseModal}
       ariaHideApp={false}
       className={cn(
-        'w-[480px] max-w-none mx-auto my-auto rounded-xl shadow-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2',
+        'sm:w-[480px] w-[70%] max-w-none mx-auto my-auto rounded-xl shadow-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2',
         className,
       )}
       overlayClassName="fixed inset-0 overflow-auto z-50 p-5 bg-black/30 transition-colors duration-150 h-[100vh] flex items-center justify-center"
